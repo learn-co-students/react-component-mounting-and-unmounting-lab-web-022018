@@ -29,6 +29,14 @@ class Pancake extends React.Component {
     clearInterval(this.interval);
   }
 
+  componentDidMount = () => {
+    this.startInterval()
+  }
+
+  componentwillUnmount = () => {
+    this.cleanUpInterval()
+  }
+
   flip = () => {
     this.setState({
       flippedAt: this.state.timeCooked
